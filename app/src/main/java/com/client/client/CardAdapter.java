@@ -16,6 +16,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
     public CardAdapter() {
         super();
+
         mItems = new ArrayList<Movie>();
 
         Movie movie = new Movie();
