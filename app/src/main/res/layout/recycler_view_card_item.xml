@@ -8,26 +8,115 @@
     <android.support.v7.widget.CardView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        card_view:contentPadding="@dimen/activity_horizontal_margin"
-        card_view:cardCornerRadius="3dp">
-        <ImageView
-            android:id="@+id/img_thumbnail"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:scaleType="fitXY"/>
-        
-        <TextView
-            android:id="@+id/tv_movie"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:layout_gravity="bottom"
-            android:gravity="center_vertical"
-            android:background="#757575"
-            android:alpha="0.8"
-            android:textSize="@dimen/abc_text_size_headline_material"
-            android:text="Test"/>
+        card_view:cardCornerRadius="3dp"
+        card_view:contentPadding="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:id="@+id/id_AllLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/id_headLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_peoplehead"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/xmen" />
+
+                <TextView
+                    android:id="@+id/text_peoplename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:text="abcabac"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_peoplesay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is test data"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/id_ContentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@layout/border"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/img_thumbnail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is Content"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/img_good"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@layout/circle"
+                    android:gravity="center"
+                    android:text="+1"
+                    android:textColor="#FF6B6B6B" />
+
+                <TextView
+                    android:id="@+id/text_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:text="5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_comment"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/comment" />
+
+                    <ImageView
+                        android:id="@+id/text_joy"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/joy" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
