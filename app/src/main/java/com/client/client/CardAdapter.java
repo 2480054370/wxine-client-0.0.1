@@ -16,7 +16,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
     public CardAdapter() {
         super();
+
         mItems = new ArrayList<Movie>();
+
         Movie movie = new Movie();
         movie.setThumbnail(R.drawable.spiderman);
         mItems.add(movie);
