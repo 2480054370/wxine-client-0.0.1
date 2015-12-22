@@ -17,6 +17,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
     public CardAdapter() {
         super();
         mItems = new ArrayList<Movie>();
+
         Movie movie = new Movie();
         movie.setName("The Amazing Spider-Man 2");
         movie.setThumbnail(R.drawable.spiderman);
