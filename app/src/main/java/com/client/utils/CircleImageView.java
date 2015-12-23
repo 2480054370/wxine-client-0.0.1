@@ -1,4 +1,4 @@
-package com.client.client;
+package com.client.utils;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -19,6 +19,8 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+
+import com.client.client.R;
 
 public class CircleImageView extends ImageView {
 

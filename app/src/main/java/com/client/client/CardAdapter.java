@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.client.bean.Movie;
+
 import java.util.ArrayList;
 import java.util.List;
 

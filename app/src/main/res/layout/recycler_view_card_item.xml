@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <com.client.client.CircleImageView
+                <com.client.utils.CircleImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/xmen" />
