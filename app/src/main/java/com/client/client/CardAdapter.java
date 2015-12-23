@@ -12,6 +12,7 @@ import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
+
     List<Movie> mItems;
 
 
