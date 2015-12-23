@@ -14,6 +14,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
     List<Movie> mItems;
 
+
     public CardAdapter() {
         super();
 
