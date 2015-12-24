@@ -1,8 +1,7 @@
-package com.client.client;
+package com.client.bean;
 
 public class Movie {
     private int mThumbnail;
-
 
     public int getThumbnail() {
         return mThumbnail;

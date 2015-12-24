@@ -23,10 +23,9 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/img_peoplehead"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                <com.client.utils.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/xmen" />
 
                 <TextView
