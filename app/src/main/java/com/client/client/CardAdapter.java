@@ -24,31 +24,31 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
         mItems = new ArrayList<Movie>();
 
         Movie movie = new Movie();
-        movie.setThumbnail(R.drawable.spiderman);
+        movie.setThumbnail(R.mipmap.spiderman);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.xmen);
+        movie.setThumbnail(R.mipmap.xmen);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.hungergame);
+        movie.setThumbnail(R.mipmap.hungergame);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.guardians_of_the_galaxy);
+        movie.setThumbnail(R.mipmap.guardians_of_the_galaxy);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.maleficent);
+        movie.setThumbnail(R.mipmap.maleficent);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.howtotrainyourdragon);
+        movie.setThumbnail(R.mipmap.howtotrainyourdragon);
         mItems.add(movie);
 
         movie = new Movie();
-        movie.setThumbnail(R.drawable.whatif);
+        movie.setThumbnail(R.mipmap.whatif);
         mItems.add(movie);
     }
 
