@@ -4,23 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_personal"
-            android:icon="@drawable/ic_menu_personal"
+            android:icon="@mipmap/ic_menu_personal"
             android:title="个人资料" />
         <item
             android:id="@+id/nav_contacts"
-            android:icon="@drawable/ic_menu_contacts"
+            android:icon="@mipmap/ic_menu_contacts"
             android:title="人脉" />
         <item
             android:id="@+id/nav_location"
-            android:icon="@drawable/ic_menu_location"
+            android:icon="@mipmap/ic_menu_location"
             android:title="位置信息" />
         <item
             android:id="@+id/nav_activity"
-            android:icon="@drawable/ic_menu_activity"
+            android:icon="@mipmap/ic_menu_activity"
             android:title="活动" />
         <item
             android:id="@+id/nav_install"
-            android:icon="@drawable/ic_menu_install"
+            android:icon="@mipmap/ic_menu_install"
             android:title="设置" />
     </group>
 
