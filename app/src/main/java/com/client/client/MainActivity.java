@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CardAdapter mAdapter;
     private Toolbar toolbar;
     private TextView addOne;
+    private boolean GOODIMG = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-
         //侧边栏
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -76,7 +76,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAdapter.setOnItemClickLitener(new CardAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view, int positon) {
-                Toast.makeText(MainActivity.this,"toast",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,positon + "toast",Toast.LENGTH_SHORT).show();
+                if (GOODIMG == false) {
+                    view.setBackgroundResource(R.drawable.circle_good);
+                    GOODIMG = true;
+                } else {
+                    view.setBackgroundResource(R.drawable.circle);
+                    GOODIMG = false;
+                }
             }
         });
         mRecyclerView.setAdapter(mAdapter);
