@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CardAdapter mAdapter;
     private Toolbar toolbar;
     private TextView addOne;
-    private boolean GOODIMG = false;
+    private boolean GOODIMG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         initRecyclerView();
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //让fab依附于recyclerview
         fab.attachToRecyclerView(mRecyclerView);
@@ -75,13 +73,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAdapter = new CardAdapter();
         mAdapter.setOnItemClickLitener(new CardAdapter.OnItemClickLitener() {
             @Override
-            public void onItemClick(View view, int positon) {
-                Toast.makeText(MainActivity.this,positon + "toast",Toast.LENGTH_SHORT).show();
+            public void onItemClick(View view, int position) {
                 if (GOODIMG == false) {
                     view.setBackgroundResource(R.drawable.circle_good);
+                    TextView addOne = (TextView) view.findViewById(R.id.img_good);
+                    addOne.setTextColor(getResources().getColor(R.color.white));
                     GOODIMG = true;
                 } else {
                     view.setBackgroundResource(R.drawable.circle);
+                    TextView addOne = (TextView) view.findViewById(R.id.img_good);
+                    addOne.setTextColor(getResources().getColor(R.color.gray));
                     GOODIMG = false;
                 }
             }
