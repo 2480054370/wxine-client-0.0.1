@@ -14,7 +14,18 @@ import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
 
+    /*
+         * 回调接口，因为Recyclerview没有setOnitemclicklistener回调
+         */
+    public interface OnItemClickLitener {
+        void onItemClick(View view, int positon);
+    }
 
+    private OnItemClickLitener mItemClickLitener;
+
+    public void setOnItemClickLitener(OnItemClickLitener mItemClickLitener) {
+        this.mItemClickLitener = mItemClickLitener;
+    }
 
     List<Movie> mItems;
 
@@ -62,9 +73,21 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
         Movie movie = mItems.get(i);
         viewHolder.imgThumbnail.setImageResource(movie.getThumbnail());
+
+        /*
+		 * 设置点击事件，绑定
+		 */
+        if (mItemClickLitener != null) {
+            viewHolder.addOne.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mItemClickLitener.onItemClick(viewHolder.addOne, i);
+                }
+            });
+        }
     }
 
     @Override
@@ -75,11 +98,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
     class ViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView imgThumbnail;
-        public TextView tvMovie;
+        public TextView addOne;
 
         public ViewHolder(View itemView) {
             super(itemView);
             imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
+            addOne = (TextView) itemView.findViewById(R.id.img_good);
         }
     }
 }

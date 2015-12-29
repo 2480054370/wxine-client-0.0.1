@@ -10,17 +10,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
-    RecyclerView.Adapter mAdapter;
+    //RecyclerView.Adapter mAdapter;
+    private CardAdapter mAdapter;
     private Toolbar toolbar;
+    private TextView addOne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setAction("Action", null).show();
             }
         });
+
+
+
         //侧边栏
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -66,6 +73,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new CardAdapter();
+        mAdapter.setOnItemClickLitener(new CardAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view, int positon) {
+                Toast.makeText(MainActivity.this,"toast",Toast.LENGTH_SHORT).show();
+            }
+        });
         mRecyclerView.setAdapter(mAdapter);
     }
 
