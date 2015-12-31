@@ -3,56 +3,25 @@ package com.client.client;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.melnykov.fab.FloatingActionButton;
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
-    //RecyclerView.Adapter mAdapter;
-    private CardAdapter mAdapter;
+public class Location extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
-    private TextView addOne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_main);
+        setContentView(R.layout.location_mian);
 
         // toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("首页");
+        toolbar.setTitle("位置信息");
         setSupportActionBar(toolbar);
-
-        initRecyclerView();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //让fab依附于recyclerview
-        fab.attachToRecyclerView(mRecyclerView);
-//        fab.show();
-//        fab.hide();
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
 
         //侧边栏
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -64,20 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
-
-    private void initRecyclerView() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mAdapter = new CardAdapter();
-        mRecyclerView.setAdapter(mAdapter);
-    }
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -91,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_location, menu);
         return true;
     }
 
@@ -106,7 +61,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
             return true;
-        } else if (id == R.id.action_opinion) {
+        } else if (id == R.id.action_filter) {
+            return true;
+        }else if (id == R.id.action_satellite) {
+            return true;
+        }else if (id == R.id.action_information) {
+            return true;
+        }else if (id == R.id.action_opinion) {
             return true;
         } else if (id == R.id.action_help) {
             return true;
@@ -123,20 +84,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_personal) {
-            startActivity(new Intent(MainActivity.this, Personal.class));
-            //页面从右进，从左退出
+            startActivity(new Intent(Location.this, Personal.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_contacts) {
-            startActivity(new Intent(MainActivity.this, Contacts.class));
-            overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
-        } else if (id == R.id.nav_location) {
-            startActivity(new Intent(MainActivity.this, Location.class));
+            startActivity(new Intent(Location.this, Contacts.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_activity) {
-            startActivity(new Intent(MainActivity.this, Movable.class));
+            startActivity(new Intent(Location.this, Movable.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_install) {
-            startActivity(new Intent(MainActivity.this, Install.class));
+            startActivity(new Intent(Location.this, Install.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         }
 
@@ -144,7 +101,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
 }

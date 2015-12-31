@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/nav_bar_ground"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@mipmap/nav_bar_ground"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <!--<com.client.utils.CircleImageView
+                android:id="@+id/icon"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:fitsSystemWindows="true"
+                android:layout_gravity="right|bottom"
+                android:src="@mipmap/xmen"
+                app:layout_collapseMode="parallax" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textSize="30dp"
+                android:text="abcabc"
+                android:fitsSystemWindows="true"
+                android:layout_marginRight="100dp"
+                android:layout_gravity="right|bottom"/>-->
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/personal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+    <com.client.utils.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@mipmap/xmen"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="center|bottom"
+        app:layout_collapseMode="parallax"
+        android:fitsSystemWindows="true"/>
+
+</android.support.design.widget.CoordinatorLayout>
