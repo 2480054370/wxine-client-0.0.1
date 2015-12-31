@@ -102,7 +102,7 @@ public class Movable extends AppCompatActivity implements NavigationView.OnNavig
             startActivity(new Intent(Movable.this, Location.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_install) {
-            startActivity(new Intent(Movable.this, Install.class));
+            startActivity(new Intent(Movable.this, setup.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
