@@ -38,7 +38,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".setup"
+            android:name=".Setups"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

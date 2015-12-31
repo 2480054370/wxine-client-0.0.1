@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(MainActivity.this, Movable.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_install) {
-            startActivity(new Intent(MainActivity.this, setup.class));
+            startActivity(new Intent(MainActivity.this, Setups.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         }
 
