@@ -71,22 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new CardAdapter();
-        mAdapter.setOnItemClickLitener(new CardAdapter.OnItemClickLitener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                if (GOODIMG == false) {
-                    view.setBackgroundResource(R.drawable.circle_good);
-                    TextView addOne = (TextView) view.findViewById(R.id.img_good);
-                    addOne.setTextColor(getResources().getColor(R.color.white));
-                    GOODIMG = true;
-                } else {
-                    view.setBackgroundResource(R.drawable.circle);
-                    TextView addOne = (TextView) view.findViewById(R.id.img_good);
-                    addOne.setTextColor(getResources().getColor(R.color.gray));
-                    GOODIMG = false;
-                }
-            }
-        });
         mRecyclerView.setAdapter(mAdapter);
     }
 

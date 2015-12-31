@@ -17,15 +17,15 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     /*
          * 回调接口，因为Recyclerview没有setOnitemclicklistener回调
          */
-    public interface OnItemClickLitener {
-        void onItemClick(View view, int positon);
-    }
-
-    private OnItemClickLitener mItemClickLitener;
-
-    public void setOnItemClickLitener(OnItemClickLitener mItemClickLitener) {
-        this.mItemClickLitener = mItemClickLitener;
-    }
+//    public interface OnItemClickLitener {
+//        void onItemClick(View view, int positon);
+//    }
+//
+//    private OnItemClickLitener mItemClickLitener;
+//
+//    public void setOnItemClickLitener(OnItemClickLitener mItemClickLitener) {
+//        this.mItemClickLitener = mItemClickLitener;
+//    }
 
     List<Movie> mItems;
 
@@ -33,7 +33,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public CardAdapter() {
         super();
 
-        mItems = new ArrayList<Movie>();
+        mItems = new ArrayList<>();
 
         Movie movie = new Movie();
         movie.setThumbnail(R.mipmap.spiderman);
@@ -55,13 +55,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         movie.setThumbnail(R.mipmap.maleficent);
         mItems.add(movie);
 
-        movie = new Movie();
-        movie.setThumbnail(R.mipmap.howtotrainyourdragon);
-        mItems.add(movie);
-
-        movie = new Movie();
-        movie.setThumbnail(R.mipmap.whatif);
-        mItems.add(movie);
+//        movie = new Movie();
+//        movie.setThumbnail(R.mipmap.howtotrainyourdragon);
+//        mItems.add(movie);
+//
+//        movie = new Movie();
+//        movie.setThumbnail(R.mipmap.whatif);
+//        mItems.add(movie);
     }
 
     @Override
@@ -78,17 +78,34 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         viewHolder.imgThumbnail.setImageResource(movie.getThumbnail());
 
         /*
-         * 设置点击事件，绑定
+         * 设置点击事件
 		 */
-        if (mItemClickLitener != null) {
-            viewHolder.addOne.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                        int pos = viewHolder.getLayoutPosition();
-                        mItemClickLitener.onItemClick(viewHolder.addOne, pos);
+        viewHolder.addOne.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                int b = viewHolder.addOne.getCurrentTextColor();
+                if(b == -9737365) {
+                    v.setBackgroundResource(R.drawable.circle_good);
+                    viewHolder.addOne.setTextColor(v.getResources().getColor(R.color.white));
+                    String sum = viewHolder.text_good.getText().toString();
+                    sum =  Integer.toString(Integer.parseInt(sum) + 1);
+                    viewHolder.text_good.setText(sum);
+                }else  if(b == -1){
+                    v.setBackgroundResource(R.drawable.circle);
+                    viewHolder.addOne.setTextColor(v.getResources().getColor(R.color.gray));
+                    String sum = viewHolder.text_good.getText().toString();
+                    sum =  Integer.toString(Integer.parseInt(sum) - 1);
+                    viewHolder.text_good.setText(sum);
                 }
-            });
-        }
+            }
+        });
+
+        viewHolder.img_comment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
@@ -96,15 +113,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return mItems.size();
     }
 
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView imgThumbnail;
-        public TextView addOne;
+        ImageView imgThumbnail;
+        TextView addOne;
+        ImageView img_comment;
+        TextView text_good;
 
         public ViewHolder(View itemView) {
             super(itemView);
             imgThumbnail = (ImageView) itemView.findViewById(R.id.img_thumbnail);
             addOne = (TextView) itemView.findViewById(R.id.img_good);
+            img_comment = (ImageView) itemView.findViewById(R.id.img_comment);
+            text_good = (TextView) itemView.findViewById(R.id.text_good);
         }
     }
 }
