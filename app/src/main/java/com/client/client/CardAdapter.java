@@ -55,13 +55,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         movie.setThumbnail(R.mipmap.maleficent);
         mItems.add(movie);
 
-//        movie = new Movie();
-//        movie.setThumbnail(R.mipmap.howtotrainyourdragon);
-//        mItems.add(movie);
-//
-//        movie = new Movie();
-//        movie.setThumbnail(R.mipmap.whatif);
-//        mItems.add(movie);
     }
 
     @Override

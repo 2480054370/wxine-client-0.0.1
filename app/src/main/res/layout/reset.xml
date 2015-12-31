@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
-        android:text="注册网信"
+        android:text="重置密码"
         android:textColor="#fefefe"
         android:textSize="30sp" />
 
@@ -20,31 +20,9 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/registerusername"
+            android:id="@+id/resetpassword"
             android:layout_width="270dp"
             android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:background="#5c5c63"
-            android:hint="用户名/手机号"
-            android:paddingLeft="60dp"
-            android:textColorHint="#e0e0e0"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/registerusername"
-            android:layout_alignLeft="@id/registerusername"
-            android:layout_alignTop="@id/registerusername"
-            android:paddingLeft="10dp"
-            android:src="@mipmap/loginuser" />
-
-        <EditText
-            android:id="@+id/registerpassword"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/registerusername"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="#5c5c63"
@@ -57,17 +35,17 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/registerpassword"
-            android:layout_alignLeft="@id/registerpassword"
-            android:layout_alignTop="@id/registerpassword"
+            android:layout_alignBottom="@id/resetpassword"
+            android:layout_alignLeft="@id/resetpassword"
+            android:layout_alignTop="@id/resetpassword"
             android:paddingLeft="10dp"
             android:src="@mipmap/loginpass" />
 
         <EditText
-            android:id="@+id/againpassword"
+            android:id="@+id/reset_againpassword"
             android:layout_width="270dp"
             android:layout_height="50dp"
-            android:layout_below="@id/registerpassword"
+            android:layout_below="@id/resetpassword"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="#5c5c63"
@@ -75,26 +53,27 @@
             android:inputType="textPassword"
             android:paddingLeft="60dp"
             android:textColorHint="#e0e0e0"
+
             android:textSize="18sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/againpassword"
-            android:layout_alignLeft="@id/againpassword"
-            android:layout_alignTop="@id/againpassword"
+            android:layout_alignBottom="@id/reset_againpassword"
+            android:layout_alignLeft="@id/reset_againpassword"
+            android:layout_alignTop="@id/reset_againpassword"
             android:paddingLeft="10dp"
             android:src="@mipmap/loginpass" />
 
         <Button
-            android:id="@+id/loginbutton"
+            android:id="@+id/reset_button"
             android:layout_width="270dp"
             android:layout_height="50dp"
-            android:layout_below="@id/againpassword"
+            android:layout_below="@id/reset_againpassword"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="#ffae00"
-            android:text="立即注册"
+            android:text="重置密码"
             android:textColor="#fef4e8"
             android:textSize="22sp" />
 

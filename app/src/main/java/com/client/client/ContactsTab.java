@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by @vitovalov on 30/9/15.
  */
-public class TabFragment extends Fragment {
+public class ContactsTab extends Fragment {
 
     private ContactsAdapter mAdapter;
 

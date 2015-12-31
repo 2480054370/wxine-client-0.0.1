@@ -1,8 +1,6 @@
 package com.client.client;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,9 +64,9 @@ public class Contacts extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new TabFragment(), "找人");
-        adapter.addFrag(new TabFragment(), "以关注");
-        adapter.addFrag(new TabFragment(), "关注者");
+        adapter.addFrag(new ContactsTab(), "找人");
+        adapter.addFrag(new ContactsTab(), "以关注");
+        adapter.addFrag(new ContactsTab(), "关注者");
 
         viewPager.setAdapter(adapter);
     }
