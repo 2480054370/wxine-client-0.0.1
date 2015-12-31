@@ -6,11 +6,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Personal extends AppCompatActivity {
+public class Bar_Personal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.personal_main);
+        setContentView(R.layout.bar_personal_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.personal_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);

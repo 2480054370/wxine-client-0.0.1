@@ -6,7 +6,7 @@
     android:layout_height="match_parent"  >
 
     <include
-        layout="@layout/setup"
+        layout="@layout/bar_location_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme.AppBarOverlay" >
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/install_toolbar"
+            android:id="@+id/location_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"

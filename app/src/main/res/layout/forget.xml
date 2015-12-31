@@ -60,17 +60,16 @@
         android:layout_gravity="center">
 
         <TextView
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="12dp"
             android:id="@+id/alreadyuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
             android:text="已有账号"
             android:textColor="#e0e0e0"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

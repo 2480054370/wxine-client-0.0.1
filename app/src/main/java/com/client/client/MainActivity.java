@@ -122,20 +122,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_personal) {
-            startActivity(new Intent(MainActivity.this, Personal.class));
+            startActivity(new Intent(MainActivity.this, Bar_Personal.class));
             //页面从右进，从左退出
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_contacts) {
-            startActivity(new Intent(MainActivity.this, Contacts.class));
+            startActivity(new Intent(MainActivity.this, Bar_Contacts.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_location) {
-            startActivity(new Intent(MainActivity.this, Location.class));
+            startActivity(new Intent(MainActivity.this, Bar_Location.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_activity) {
-            startActivity(new Intent(MainActivity.this, Movable.class));
+            startActivity(new Intent(MainActivity.this, Bar_Movable.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         } else if (id == R.id.nav_install) {
-            startActivity(new Intent(MainActivity.this, Setups.class));
+            startActivity(new Intent(MainActivity.this, Bar_Setups.class));
             overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
         }
 

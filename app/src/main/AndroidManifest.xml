@@ -19,28 +19,31 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Personal"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:name=".ForgetActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Contacts"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Location"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:name=".ResetActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Movable"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:name=".Bar_Personal"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Setups"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:name=".Bar_Contacts"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Bar_Location"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Bar_Movable"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Bar_Setups"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -14,11 +14,11 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Contacts extends AppCompatActivity {
+public class Bar_Contacts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contacts_main);
+        setContentView(R.layout.bar_contacts_main);
        Toolbar toolbar = (Toolbar) findViewById(R.id.contacts_toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -64,9 +64,9 @@ public class Contacts extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new ContactsTab(), "找人");
-        adapter.addFrag(new ContactsTab(), "以关注");
-        adapter.addFrag(new ContactsTab(), "关注者");
+        adapter.addFrag(new Bar_ContactsTab(), "找人");
+        adapter.addFrag(new Bar_ContactsTab(), "以关注");
+        adapter.addFrag(new Bar_ContactsTab(), "关注者");
 
         viewPager.setAdapter(adapter);
     }

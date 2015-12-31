@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Checkable;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -21,6 +22,8 @@ public class SignInActivity extends AppCompatActivity {
     private EditText passwordEdit;
     private Button login;
     private Checkable rememberPass;
+    private TextView forgetPassword;
+    private TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class SignInActivity extends AppCompatActivity {
         passwordEdit = (EditText) findViewById(R.id.loginpassword);
         login = (Button) findViewById(R.id.loginbutton);
         rememberPass = (Checkable) findViewById(R.id.remember_pass);
+        forgetPassword = (TextView) findViewById(R.id.forget);
+        register = (TextView) findViewById(R.id.register);
         boolean isRemeber = pref.getBoolean("remember_password", false);
         if (isRemeber) {
             //将账号和密码都设置到文本框中
@@ -52,16 +57,30 @@ public class SignInActivity extends AppCompatActivity {
                         editor.putBoolean("remember_password", true);
                         editor.putString("loginusername", loginusername);
                         editor.putString("loginpassword", loginpassword);
-                    }else{
+                    } else {
                         editor.clear();
                     }
                     editor.commit();
-                    Intent intent = new Intent(SignInActivity.this,MainActivity.class);
+                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }else{
-                    Toast.makeText(SignInActivity.this,"账号或者密码错误",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SignInActivity.this, "账号或者密码错误", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this, ForgetActivity.class);
+                startActivity(intent);
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

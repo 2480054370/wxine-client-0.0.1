@@ -11,16 +11,16 @@ import java.util.List;
 /**
  * Created by 123 on 2015/12/30.
  */
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyViewHolder>{
+public class Bar_ContactsAdapter extends RecyclerView.Adapter<Bar_ContactsAdapter.MyViewHolder>{
     List<String> mListData;
 
-    public ContactsAdapter(List<String> mListData) {
+    public Bar_ContactsAdapter(List<String> mListData) {
         this.mListData = mListData;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.contacts_card_item,
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.bar_contacts_card_item,
                 viewGroup, false);
         return new MyViewHolder(view);
     }

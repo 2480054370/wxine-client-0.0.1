@@ -48,7 +48,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/bar_content_scrolling" />
 
     <com.client.utils.CircleImageView
         android:id="@+id/imageView"

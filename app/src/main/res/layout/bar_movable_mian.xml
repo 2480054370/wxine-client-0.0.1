@@ -6,7 +6,7 @@
     android:layout_height="match_parent"  >
 
     <include
-        layout="@layout/location_map"
+        layout="@layout/bar_movable"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme.AppBarOverlay" >
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/location_toolbar"
+            android:id="@+id/movable_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -26,4 +26,18 @@
             fab:layout_scrollFlags="scroll|enterAlways"  />
 
     </android.support.design.widget.AppBarLayout>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/movable_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email"
+        fab:fab_type = "normal"
+        fab:fab_shadow="true"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/primary_pressed"
+        fab:fab_colorRipple="@color/ripple"  />
+
 </android.support.design.widget.CoordinatorLayout>

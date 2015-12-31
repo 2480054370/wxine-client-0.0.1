@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-public class Location extends AppCompatActivity{
+public class Bar_Location extends AppCompatActivity{
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.location_mian);
+        setContentView(R.layout.bar_location_mian);
 
         // toolbar
         toolbar = (Toolbar) findViewById(R.id.location_toolbar);
